@@ -2,6 +2,7 @@ package co.edu.uniandes.dse.TallerPersistencia.entities;
 
 import java.lang.reflect.Array;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
@@ -17,7 +18,7 @@ public class MovieEntity extends BaseEntity{
     @ManyToOne
     private DirectorEntity director;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     private ScriptEntity script;
 
     @ManyToMany
